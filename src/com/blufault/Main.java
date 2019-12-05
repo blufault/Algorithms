@@ -1,14 +1,19 @@
 package com.blufault;
 
-import com.blufault.utils.Utilities;
+import com.blufault.data_structures.LinkedList;
+import com.blufault.utils.Utilities.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Integer[] myArray = {1, 2, 3};
+        LinkedList<Integer> ll = new LinkedList<Integer>();
 
-        System.out.println("Find the max: " + (Integer) Utilities.findMax(myArray));
+        for (int i = 0; i < 10; i++) {
+            ll.addToHead(i);
+        }
+
+        ll.removeFromTail();
     }
 }
