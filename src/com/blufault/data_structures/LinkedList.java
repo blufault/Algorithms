@@ -70,6 +70,10 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * traverse won't be public available to clients.
+     * use is only for debugging
+     */
     private void traverse() {
         Node i = null;
         for(i = this.head; i.next != null; i = i.next) {
