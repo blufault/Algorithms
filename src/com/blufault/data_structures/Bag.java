@@ -7,6 +7,7 @@ import com.blufault.data_structures.*;
  * to collect items and then to iterate through the collected items.
  */
 
+// todo: maybe have the capacity on the LinkedList?
 public class Bag<T> {
     LinkedList<T> linkedList;
     int capacity;

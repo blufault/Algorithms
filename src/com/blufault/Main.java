@@ -1,6 +1,6 @@
 package com.blufault;
 
-import com.blufault.data_structures.Bag;
+import com.blufault.data_structures.Queue;
 import com.blufault.utils.Utilities.*;
 
 import java.util.Arrays;
@@ -8,13 +8,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Bag<Integer> myBag = new Bag<>();
+        Queue<Integer> myQueue = new Queue<>();
 
         for (int i = 0; i < 10; i++) {
-            myBag.add(i);
+            myQueue.enqueue(i);
         }
 
-        System.out.println("Is the bag empty? " + myBag.isEmpty());
-        System.out.println("The size of the bag: " + myBag.size());
+        myQueue.dequeue();
+
+        myQueue.printQueue();
     }
 }

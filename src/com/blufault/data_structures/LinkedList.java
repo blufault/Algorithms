@@ -33,11 +33,19 @@ public class LinkedList<T> {
 
     /**
      * removeFromHead: Remove a Node from the head of the linked list
+     * @params null
+     * @return Return the Node from the head of the Linked List
      */
-    public void removeFromHead() {
+    public Node removeFromHead() {
+        Node node;
+
         if (this.head != null) {
+            node = this.head;
             this.head = this.head.next;
+            return node;
         }
+
+        return null;
     }
 
     /**
@@ -46,8 +54,10 @@ public class LinkedList<T> {
      * @return null
      */
     public void addToTail(T item) {
-        if (this.tail == null) {
-            return;
+        if (this.head == null && this.tail == null) {
+            Node node = new Node<T>(item);
+            this.head = node;
+            this.tail = node;
         } else {
             Node prevTail = this.tail;
             Node node = new Node<T>(item);
@@ -59,22 +69,28 @@ public class LinkedList<T> {
 
     /**
      * removeFromTail: Remove a Node from the tail of the linked list
+     * @params null
+     * @return Returns the removed Node from the tail of the linked list
      */
-    public void removeFromTail() {
+    public Node removeFromTail() {
+        Node pastTail = null;
+
         if (this.tail == null) {
-            return;
+            return null;
         } else {
-            Node prevTail = traverseBefore(this.tail);
+            pastTail = this.tail;
+            Node prevTail = traverseBefore(pastTail);
             this.tail = prevTail;
             this.tail.next = null;
         }
+        return pastTail;
     }
 
     /**
      * traverse won't be public available to clients.
      * use is only for debugging
      */
-    private void traverse() {
+    public void traverse() {
         Node i = null;
         for(i = this.head; i.next != null; i = i.next) {
             System.out.println("Inside the for-loop: " + i.value);
