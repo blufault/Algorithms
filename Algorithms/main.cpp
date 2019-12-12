@@ -7,19 +7,16 @@
 //
 
 #include<iostream>
-#include "DataStructure/Node/Node.h"
+#include "DataStructure/LinkedList/LinkedList.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  Node<int> node, node2;
+  Linkedlist<int> mylist;
 
-  node.value = 1;
-  node2.value = 2;
+  mylist.insertAtBeginning(1);
+  mylist.insertAtBeginning(2);
 
-  node.next = &node2;
-
-  cout << node.value << " " << node2.value << endl;
-
+  cout << mylist.getValue() << endl;
   return 0;
 }
