@@ -7,23 +7,19 @@
 //
 
 #include<iostream>
-#include "DataStructure/Stack/FixedCapacityStackIterator.h"
+#include "DataStructure/Node/Node.h"
 
 using namespace std;
 
-// 0 = false
-// 1 = true
-
 int main(int argc, const char * argv[]) {
-  FixedCapacityStackIterator<int> fstack;
+  Node<int> node, node2;
 
-  fstack.vec.push_back(1);
-  fstack.vec.push_back(2);
-  fstack.vec.push_back(3);
+  node.value = 1;
+  node2.value = 2;
 
-  for (int &val : fstack) {
-    cout << val << endl;
-  }
+  node.next = &node2;
+
+  cout << node.value << " " << node2.value << endl;
 
   return 0;
 }
