@@ -4,3 +4,8 @@
 
 out
 .idea/
+
+Algorithms/html/*
+Algorithms/latex/*
+
+.bak.java.src/
