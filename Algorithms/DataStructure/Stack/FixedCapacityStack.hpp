@@ -21,26 +21,23 @@ public:
     // constructors
     FixedCapacityStack() = default;
 
+    // member functions
     void push(Item _item) {
         item[capacity++] = _item;
     }
-    
     Item pop() {
         return item[--capacity];
     }
-    
     bool isEmpty() {
         return capacity == 0;
     }
-    
     int size() {
         return capacity;
     }
-    
     bool isFull() {
         return capacity == stacklen;
     }
-    
+
 private:
     int capacity = 0;
     // constexpr: evaluate the value at compile time.

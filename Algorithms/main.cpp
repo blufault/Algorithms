@@ -7,7 +7,7 @@
 //
 
 #include<iostream>
-#include "DataStructure/Stack/FixedCapacityStack.hpp"
+#include "DataStructure/Stack/FixedCapacityStackIterator.h"
 
 using namespace std;
 
@@ -15,10 +15,15 @@ using namespace std;
 // 1 = true
 
 int main(int argc, const char * argv[]) {
-    FixedCapacityStack<int> fixedStack(10);
-    
-    fixedStack.push(10);
-    fixedStack.iterator();
-    
-    return 0;
+  FixedCapacityStackIterator<int> fstack;
+
+  fstack.vec.push_back(1);
+  fstack.vec.push_back(2);
+  fstack.vec.push_back(3);
+
+  for (int &val : fstack) {
+    cout << val << endl;
+  }
+
+  return 0;
 }
