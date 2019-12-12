@@ -1,0 +1,3 @@
+[submodule "Algorithms/Iterator/Simple-Iterator-Template"]
+	path = Algorithms/Iterator/Simple-Iterator-Template
+	url = https://github.com/VinGarcia/Simple-Iterator-Template
