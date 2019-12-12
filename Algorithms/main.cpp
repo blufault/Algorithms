@@ -6,10 +6,19 @@
 //  Copyright © 2019 Jeff Kim. All rights reserved.
 //
 
-#include <iostream>
+#include<iostream>
+#include "DataStructure/Stack/FixedCapacityStack.hpp"
+
+using namespace std;
+
+// 0 = false
+// 1 = true
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    FixedCapacityStack<int> fixedStack(10);
+    
+    fixedStack.push(10);
+    fixedStack.iterator();
+    
     return 0;
 }
