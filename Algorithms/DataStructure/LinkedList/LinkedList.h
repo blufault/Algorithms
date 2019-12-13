@@ -3,24 +3,37 @@
 
 #include "../Node/Node.h"
 
-// Linkedlist will only have a head for now
+using namespace std;
+
+//node1.value = 1;
+//node1.next = nullptr;
+//
+//node2.value = 2;
+//node2.next = &node1;
+
 template <class T> class Linkedlist {
   public:
+    Linkedlist() {
+      head = nullptr;
+    }
+  
     void insertAtBeginning(T value) {
-      Node<T> _node;
-      _node.value = value;
-
-      if (head != 0) {
-        _node.next = head;
+      // Create the node
+      Node<T> *tmp = new Node<T>(value);
+      tmp->next = head;
+      head = tmp;
+    }
+  
+    void traverse() {
+      Node<T> *t = new Node<T>;
+      t = head;
+      
+      while (t) {
+        cout << t->value << endl;
+        t = t->next;
       }
-      head = &_node;
     }
-
-    T getValue() {
-      // i previously did, *head.value
-      // but head->value worked...
-      return head->value;
-    }
+  
   private:
     Node<T> *head;
 };

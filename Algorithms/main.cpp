@@ -7,16 +7,17 @@
 //
 
 #include<iostream>
-#include "DataStructure/Stack/ResizingArrayStack.h"
+//#include "DataStructure/Node/Node.h"
+#include "DataStructure/LinkedList/LinkedList.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  ResizingArrayStack<int> dystack;
+  Linkedlist<int> list;
   
-  dystack.push(1);
+  list.insertAtBeginning(1);
   
-  dystack.traverse();
+  list.traverse();
   
   return 0;
 }
