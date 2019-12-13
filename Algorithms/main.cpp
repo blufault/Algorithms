@@ -7,7 +7,6 @@
 //
 
 #include<iostream>
-//#include "DataStructure/Node/Node.h"
 #include "DataStructure/LinkedList/LinkedList.h"
 
 using namespace std;
@@ -16,6 +15,9 @@ int main(int argc, const char * argv[]) {
   Linkedlist<int> list;
   
   list.insertAtBeginning(1);
+  list.insertAtBeginning(2);
+  
+  list.insertAtEnd(10);
   
   list.traverse();
   

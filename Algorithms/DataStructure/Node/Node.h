@@ -6,16 +6,14 @@
 #define Node_h
 
 template <typename T> struct Node {
-    Node() = default;
+  T value;
+  Node *next;
   
-    Node(T value) {
-      value = value;
-      next = nullptr;
-    }
+  Node(T val): value(val) {
+    value = val;
+    next = nullptr;
+  }
   
-    T value;
-    Node *next;
 };
 
 #endif
-

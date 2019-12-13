@@ -24,14 +24,35 @@ template <class T> class Linkedlist {
       head = tmp;
     }
   
-    void traverse() {
-      Node<T> *t = new Node<T>;
-      t = head;
+    void insertAtEnd(T value) {
+      Node<T> *last;
+      // TODO: call the member function 'traverse' with last as argument
       
-      while (t) {
-        cout << t->value << endl;
-        t = t->next;
+      for (last = head; last->next != 0; last = last->next) {
+        ;
       }
+      
+      Node<T> *tmp = new Node<T>(value);
+      last->next = tmp;
+    }
+  
+    void removeFromBeginning() {
+      head = head->next;
+    }
+  
+    void traverse() {
+      for (Node<T> *t = head; t != 0; t = t->next) {
+        cout << t->value << endl;
+      }
+    }
+  
+    void traverse(Node<T> &refT) {
+      Node<T> *t;
+      for (t = head; t != 0; t = t->next) {
+        cout << t->value << endl;
+      }
+      
+      refT = t;
     }
   
   private:
