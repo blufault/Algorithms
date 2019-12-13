@@ -7,19 +7,13 @@
 //
 
 #include<iostream>
-#include "DataStructure/LinkedList/LinkedList.h"
+#include "DataStructure/Stack/Stack.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  Linkedlist<int> list;
+  Stack<int> stack;
   
-  list.insertAtBeginning(1);
-  list.insertAtBeginning(2);
-  
-  list.insertAtEnd(10);
-  
-  list.traverse();
-  
+  stack.push(1);
   return 0;
 }

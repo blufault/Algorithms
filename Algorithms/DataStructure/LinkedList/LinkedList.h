@@ -5,12 +5,6 @@
 
 using namespace std;
 
-//node1.value = 1;
-//node1.next = nullptr;
-//
-//node2.value = 2;
-//node2.next = &node1;
-
 template <class T> class Linkedlist {
   public:
     Linkedlist() {
@@ -36,8 +30,12 @@ template <class T> class Linkedlist {
       last->next = tmp;
     }
   
-    void removeFromBeginning() {
+    // TODO: Should this return the Node or just the type T?
+    T removeFromBeginning() {
+      Node<T> *rptr = head;
       head = head->next;
+
+      return rptr->value;
     }
   
     void traverse() {
@@ -46,6 +44,7 @@ template <class T> class Linkedlist {
       }
     }
   
+    // TODO: Properly overload the traverse function
     void traverse(Node<T> &refT) {
       Node<T> *t;
       for (t = head; t != 0; t = t->next) {
