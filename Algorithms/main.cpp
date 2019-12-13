@@ -7,16 +7,16 @@
 //
 
 #include<iostream>
-#include "DataStructure/LinkedList/LinkedList.h"
+#include "DataStructure/Stack/ResizingArrayStack.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  Linkedlist<int> mylist;
-
-  mylist.insertAtBeginning(1);
-  mylist.insertAtBeginning(2);
-
-  cout << mylist.getValue() << endl;
+  ResizingArrayStack<int> dystack;
+  
+  dystack.push(1);
+  
+  dystack.traverse();
+  
   return 0;
 }
