@@ -7,13 +7,17 @@
 //
 
 #include<iostream>
-#include "DataStructure/Stack/Stack.h"
+#include "DataStructure/Queue/Queue.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  Stack<int> stack;
+  Queue<int> queue;
+
+  queue.enqueue(1);
+  queue.enqueue(2);
   
-  stack.push(1);
+  queue.dequeue();
+
   return 0;
 }
