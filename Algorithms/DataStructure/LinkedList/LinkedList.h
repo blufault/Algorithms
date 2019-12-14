@@ -2,6 +2,7 @@
 #define LinkedList_h
 
 #include "../Node/Node.h"
+#include "./../../Iterator/Iterator.h"
 
 using namespace std;
 
@@ -9,13 +10,20 @@ template <class T> class Linkedlist {
   public:
     Linkedlist() {
       head = nullptr;
+      // TODO: How did assign iterator to a new Iterator solve the BADxACCESS of biter?
+      iterator = new Iterator<T>;
     }
 
+    // TODO: when the user only uses this member function
+    // TODO: we should be accountable for the 'tail'
     void insertAtBeginning(T value) {
       // Create the node
       Node<T> *tmp = new Node<T>(value);
       tmp->next = head;
       head = tmp;
+
+      // setting Iterator here
+      iterator->setBiter(head);
     }
 
     void insertAtEnd(T value) {
@@ -32,6 +40,9 @@ template <class T> class Linkedlist {
         }
 
         last->next = tmp;
+
+        // Set up the end of the Iterator here
+        iterator->setEiter(tmp);
       }
     }
 
@@ -73,8 +84,19 @@ template <class T> class Linkedlist {
       return last;
     }
 
+    Node<T> *begin() {
+      return iterator->begin();
+    }
+
+    Node<T> *end() {
+      return iterator->end();
+    }
+  
+    // TODO: Complete the friend Operator++ for Iterator
+
   private:
     Node<T> *head;
+    Iterator<T> *iterator;
 };
 
 #endif

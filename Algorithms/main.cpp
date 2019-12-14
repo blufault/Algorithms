@@ -7,17 +7,22 @@
 //
 
 #include<iostream>
-#include "DataStructure/Queue/Queue.h"
+#include "DataStructure/LinkedList/LinkedList.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  Queue<int> queue;
+  Linkedlist<int> list;
 
-  queue.enqueue(1);
-  queue.enqueue(2);
+  list.insertAtBeginning(1);
+  list.insertAtBeginning(2);
+  list.insertAtBeginning(3);
+  list.insertAtEnd(5);
+
+  // Use Iterator
+  for (Node<int> *iter = list.begin(); iter != list.end(); iter = iter->next) {
+    cout << iter->value << endl;
+  }
   
-  queue.dequeue();
-
   return 0;
 }
