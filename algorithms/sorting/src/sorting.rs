@@ -1,6 +1,6 @@
 
 // TODO:
-// [] - Implement Genercis for binary_search
+// [] - Implement Generics for binary_search
 // [] - Since Rust does not support overloading functions, try enums with tuples, traits and impl
 
 pub mod binary_search {
