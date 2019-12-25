@@ -1,7 +1,9 @@
+
 // TODO:
 // [] - Implement Genercis for binary_search
 // [] - Since Rust does not support overloading functions, try enums with tuples, traits and impl
-mod binary_search {
+
+pub mod binary_search {
     pub fn binary_search(v: &Vec<i32>, target: i32) -> i32 {
         let len_sub_one = (v.len() - 1) as usize;
         return binary_search_impl(&v, target, 0, len_sub_one);
@@ -23,3 +25,4 @@ mod binary_search {
         }
     }
 }
+
