@@ -1,12 +1,9 @@
-pub fn add_one(x: i32) -> i32 {
-    x + 1
-}
+mod sorting;
+pub use crate::sorting::binary_search;
 
-#[cfg(test)]
-pub mod tests {
+#[test]
 
-    #[test]
-    fn should_add_one() {
-        assert_eq!(3, add_one(2));
-    }
+fn example() {
+    let v: Vec<i32> = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13];
+    assert_eq!(3, binary_search::binary_search(&v, 4));
 }
