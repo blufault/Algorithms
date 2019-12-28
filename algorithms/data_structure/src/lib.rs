@@ -1,7 +1,11 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+
+mod fixed_capacity;
+pub use crate::fixed_capacity::fixed_capacity::Point::Point;
+
+#[test]
+fn test() {
+    let p = Point::new();
+
+    assert_eq!(p.x, 0);
 }
+
