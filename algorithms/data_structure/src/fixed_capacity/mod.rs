@@ -18,6 +18,10 @@ pub mod stack_of_strings {
         }
 
         pub fn push(&mut self, value: i32) {
+            if self.len >= 5 {
+                panic!("Cannot push.");
+            }
+
             self.storage[self.len] = value;
             // Add a trait to allow Binary Operation
             self.len = self.len + 1;

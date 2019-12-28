@@ -64,3 +64,16 @@ fn stack_of_string_invalid_pop() {
     }
 }
 
+#[test]
+fn stack_of_string_invalid_push() {
+    let mut s:Stack = Stack::new();
+
+    // TODO: Construct a better test for this..
+    for num in (0..6) {
+        if num == 5 {
+            assert!(true);
+            break;
+        }
+        s.push(num);
+    }
+}
