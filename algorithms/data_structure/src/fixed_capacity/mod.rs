@@ -1,5 +1,6 @@
 
-use std::io::Error;
+// TODO
+// [] - Allow Binary operations on usize (cleaner code)
 
 pub mod stack_of_strings {
     pub struct Stack {
@@ -12,7 +13,7 @@ pub mod stack_of_strings {
             Stack { len: 0, storage: [0, 0, 0, 0, 0] }
         }
 
-        pub fn getLen(&self) -> usize {
+        pub fn get_len(&self) -> usize {
             self.len
         }
 
@@ -22,11 +23,15 @@ pub mod stack_of_strings {
             self.len = self.len + 1;
         }
 
-        pub fn pop(&mut self) -> i32 {
+        pub fn pop(&mut self) -> Result<i32, String> {
+            if self.len < 1 {
+                return Err(String::from("Cannot pop."));
+            }
+
             // Add a trait to allow Binary Operation
             self.len = self.len - 1;
             let val: i32 = self.storage[self.len];
-            val
+            return Ok(val);
         }
 
         pub fn at(&self, ind: usize) -> i32 {
